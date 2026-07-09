@@ -1,0 +1,58 @@
+{
+  "summary": "Frontend-only E2E prototype testing complete. 18 test scenarios executed across landing, header/search, marketplace filters+sort, item detail (buy/offer/save), appraise 4-step wizard, valuation reveal, 6 category pages, dashboard, empty states, auth, 404, and mobile viewport. Core flows and navigation all functional. Two visual/imagery issues found on landing page category tiles.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "LandingPage / CategoryTile (Magic: The Gathering)",
+        "issue": "Broken Unsplash image on landing categories grid. URL returns 404 leaving an empty black tile with visible alt-text 'Magic: The Gathering'. Fix: replace URL in /app/frontend/src/data/mock.js CATEGORIES[2].image (currently photo-1727445281463-af0d3a2caee3) with a working MTG-related Unsplash photo.",
+        "selector": "[data-testid='categories-section'] a[href='/category/magic'] img",
+        "priority": "HIGH"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "Landing / Categories grid",
+        "issues": [
+          "Coins category tile shows a portrait of a woman (photo-1621786030484-4c855eed6974) — completely unrelated to numismatics.",
+          "Signed Memorabilia tile shows LEGO bricks (photo-1519861531473-9200262188bf) — unrelated to memorabilia.",
+          "Comics tile shows a Stormtrooper toy figurine (photo-1608889825205-eebdb9fc5806) — arguably a toy, not a comic book. These mismatches undermine the 'Apple × Sotheby's' premium curation feel."
+        ]
+      },
+      {
+        "screen": "ItemDetailPage gallery",
+        "issues": [
+          "Since mock items reuse the same generic category image across all 3 gallery slots, thumbnails/hero look nearly identical. Not blocking, but hurts the 'showpiece' feel."
+        ]
+      }
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "REPLACE broken Magic image URL in /app/frontend/src/data/mock.js (CATEGORIES[2].image = photo-1727445281463-af0d3a2caee3) with a working Unsplash photo that actually depicts MTG cards.",
+    "REPLACE the Coins CATEGORIES[4].image (woman portrait) and Memorabilia CATEGORIES[5].image (LEGO) with topically accurate Unsplash imagery. Consider also revisiting Comics CATEGORIES[3].image (currently a Stormtrooper toy).",
+    "Optionally distinguish the 3 gallery images per item in mock.js so the item-detail gallery does not repeat the same photo three times."
+  ],
+  "critical_code_review_comments": [
+    "App.js ScrollToTop: reads window.location.pathname directly and lists it in the useEffect dependency; because the pathname state isn't from useLocation(), scroll-to-top will NOT fire on client-side route changes. Replace with `const { pathname } = useLocation();` from react-router-dom.",
+    "AppraisePage Textarea import: /app/frontend/src/pages/AppraisePage.js imports { Input, Textarea, Label, Select } from '../components/ui/Input' — worth verifying that Textarea and Select are actually exported from Input.js (they render fine in tests, so this is only a code-organization note).",
+    "React Router future flag warnings (v7_startTransition, v7_relativeSplatPath) are logged twice on every page navigation. Add `future={{ v7_startTransition: true, v7_relativeSplatPath: true }}` to <BrowserRouter> to silence.",
+    "MarketplacePage: `filters.priceBucket` is truthy check in `hasFilters` — bucket 0 (Any) evaluates false which is correct, but the update() helper deletes the param when value === 0 (works). Minor: passing Number(0) triggers delete — acceptable.",
+    "Broken image handling: currently a failed <img> shows the alt text on a black tile with no fallback. Consider onError -> placeholder for resilience."
+  ],
+  "updated_files": [],
+  "success_rate": {
+    "backend": "N/A (backend testing skipped per request)",
+    "frontend": "95% (18/18 functional flows pass; 1 broken image asset + 2 imagery mismatches to fix)"
+  },
+  "test_credentials": "Pre-filled demo creds work: alex@collectible.example / demo123 (any non-empty accepted per stubbed auth).",
+  "seed_data_creation": "None. All data from /app/frontend/src/data/mock.js.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All 18 scripted flows pass: landing sections, header nav+search, mobile menu at 375x800, marketplace with 12 items and category/price/condition/sort filters, item card -> /item/:id, item detail buy modal + offer modal + save toggle, appraise 4-step wizard (upload -> details -> condition -> analyzing -> auto-redirect to /valuation/val-<ts>), valuation page with big value + confidence + 3 comparables + list-for-sale CTA + re-appraise, all 6 category pages, seller dashboard with metrics and 'New listing' -> /appraise, empty states at /collection /saved /admin/review, signin (pre-filled) -> /dashboard, signup -> /dashboard, 404 for /nonexistent showing 'Return home'. Only asset-level issues remain (see design_issues + ui_bugs).",
+  "rca of the issue": "Broken Magic tile image: Unsplash URL photo-1727445281463-af0d3a2caee3 returns a 404/deleted response; the browser reports naturalWidth===0 while complete===true. Root cause is the specific photo ID no longer being available on Unsplash. Mitigation: swap for a verified MTG/trading-card photo ID (see how POK_IMG uses photo-1611931960487-4932667079f1 successfully). Steps to reproduce: open landing page at 1440x900, scroll to 'Six worlds. One marketplace.' — the 3rd tile (Magic) renders black with visible alt-text."
+}
