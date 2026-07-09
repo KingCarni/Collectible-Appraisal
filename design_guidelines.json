@@ -1,0 +1,139 @@
+{
+  "theme_strategy": {
+    "mode": "dark",
+    "description": "Dark theme only for MVP to establish a premium, Sotheby's-like atmosphere. The UI acts as a calm, confident backdrop where the collectibles (photography) are the absolute heroes."
+  },
+  "colors": {
+    "primary": "#2563EB",
+    "accent": "#D4AF37",
+    "background": "#0B0F14",
+    "surface": "#151B23",
+    "border": "#2A3441",
+    "text": {
+      "primary": "#F8FAFC",
+      "muted": "#94A3B8"
+    },
+    "status": {
+      "success": "#22C55E",
+      "warning": "#F59E0B",
+      "error": "#EF4444"
+    },
+    "rules": [
+      "Never use full-screen purple or loud neon gradients.",
+      "Primary blue establishes trust and should be used for primary actions.",
+      "Accent gold is for premium tiers, rare item indicators, and high-confidence AI valuations. Use sparingly.",
+      "Backgrounds are deep near-black (#0B0F14), cards/surfaces are #151B23. Ensure proper contrast."
+    ]
+  },
+  "typography": {
+    "headings": {
+      "family": "Space Grotesk",
+      "weights": ["400", "500", "700"],
+      "usage": "Use tight tracking (tracking-tight) for H1-H3 to convey modern sophistication."
+    },
+    "body": {
+      "family": "Inter",
+      "weights": ["400", "500"],
+      "usage": "Clean, highly legible sans-serif for metadata, descriptions, and UI text."
+    },
+    "scale": {
+      "h1": "text-4xl md:text-5xl lg:text-6xl tracking-tighter",
+      "h2": "text-3xl md:text-4xl tracking-tight",
+      "h3": "text-2xl md:text-3xl",
+      "body_large": "text-lg text-[#94A3B8]",
+      "body": "text-base text-[#F8FAFC]",
+      "small": "text-sm text-[#94A3B8]",
+      "overline": "text-xs uppercase tracking-widest font-medium"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Whitespace is a feature. Generous margins (p-8 to p-16) to create a gallery-like experience.",
+    "container": "max-w-7xl mx-auto px-6 md:px-12 lg:px-24",
+    "grid": {
+      "marketplace": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8",
+      "bento_features": "grid grid-cols-1 md:grid-cols-12 gap-6"
+    },
+    "border_radius": "rounded-xl (10-14px) for cards and images. Soft, not overly bubbly."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#2563EB] text-[#F8FAFC] rounded-lg px-6 py-3 font-medium transition-all duration-200 hover:bg-blue-700 active:scale-[0.98]",
+      "secondary": "bg-[#151B23] border border-[#2A3441] text-[#F8FAFC] rounded-lg px-6 py-3 font-medium transition-all duration-200 hover:bg-[#2A3441]",
+      "accent": "bg-[#D4AF37] text-[#0B0F14] rounded-lg px-6 py-3 font-medium transition-all duration-200 hover:brightness-110",
+      "rules": "No oversized buttons. Keep padding elegant and balanced."
+    },
+    "cards": {
+      "collectible_card": "bg-[#151B23] border border-[#2A3441] rounded-xl overflow-hidden hover:border-[#94A3B8] transition-colors duration-250. Image must fill the top 70% of the card. Text area is minimal (Title, Price, Condition).",
+      "valuation_card": "Surface background, gold accent border for high confidence. Features a subtle inner glow using box-shadow.",
+      "upload_dropzone": "border-2 border-dashed border-[#2A3441] rounded-xl bg-[#0B0F14] hover:bg-[#151B23] transition-colors p-12 flex flex-col items-center justify-center text-center cursor-pointer."
+    },
+    "inputs": {
+      "text": "bg-[#0B0F14] border border-[#2A3441] rounded-lg px-4 py-2.5 text-[#F8FAFC] placeholder-[#94A3B8] focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-[#2563EB] transition-all",
+      "select": "Same as text input, typically paired with a Lucide React ChevronDown icon."
+    },
+    "badges": {
+      "condition": "bg-[#151B23] border border-[#2A3441] text-[#F8FAFC] text-xs px-2.5 py-1 rounded-full",
+      "confidence": "bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/30 text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5"
+    },
+    "navigation": {
+      "header": "Sticky top-0 z-50 bg-[#0B0F14]/80 backdrop-blur-xl border-b border-[#2A3441]. Minimal links, refined layout. NO transparent backgrounds without blur."
+    }
+  },
+  "motion": {
+    "philosophy": "Invisible and subtle. Feels natural, not flashy.",
+    "duration": "150ms to 250ms",
+    "easing": "ease-out",
+    "transitions": {
+      "hover": "transition-colors duration-200",
+      "page_enter": "animate-in fade-in slide-in-from-bottom-4 duration-500",
+      "modal_enter": "animate-in zoom-in-95 fade-in duration-200"
+    }
+  },
+  "media": {
+    "rules": "Photography is the hero. Images must be large, high quality, and fill the container. Apply a subtle black gradient overlay at the bottom of hero images if text is placed over them.",
+    "image_urls": {
+      "hero_background": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=2000",
+      "category_fine_art": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1080",
+      "category_pokemon": "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?q=85&w=1080",
+      "category_mtg": "https://images.unsplash.com/photo-1605371924599-2d0365da1ae0?q=80&w=1080",
+      "category_comics": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=85&w=1080",
+      "category_coins": "https://images.unsplash.com/photo-1550565118-3a14e8d0386f?q=80&w=1080",
+      "category_memorabilia": "https://images.unsplash.com/photo-1540953609802-18451121d516?q=80&w=1080",
+      "item_charizard_card": "https://images.unsplash.com/photo-1611931960487-4932667079f1?q=85&w=1080"
+    }
+  },
+  "iconography": {
+    "library": "lucide-react",
+    "style": "Thin, minimal, stroke-width 1.5. No heavy or filled icons unless indicating active state.",
+    "usage": "Use sparingly. Let typography and spacing do the heavy lifting."
+  },
+  "accessibility": {
+    "contrast": "Ensure text over surface backgrounds meets WCAG AA standards. #F8FAFC on #151B23 is highly accessible.",
+    "focus": "All interactive elements must have a visible focus state (e.g., ring-2 ring-[#2563EB] ring-offset-2 ring-offset-[#0B0F14]).",
+    "motion": "Respect prefers-reduced-motion media query for all transitions."
+  },
+  "views_and_layouts": {
+    "landing_page": "Hero section with large centered typography and massive featured image. Bento grid for 'How it works'. Horizontal scrolling row for featured items.",
+    "upload_flow": "Centered, narrow max-width container (max-w-2xl). Step indicators. Large drag-and-drop zone. Soft glowing borders during AI analysis.",
+    "item_detail": "Split layout: 60% left side dedicated purely to a massive, edge-to-edge photo gallery. 40% right side sticky column for title, valuation, provenance, and Buy CTA.",
+    "marketplace": "Sidebar layout. 250px left sidebar for filters (Category, Price, Condition). Right side auto-fill grid of large item cards.",
+    "dashboard": "Clean table lists for My Listings, soft metric cards for sales analytics. Empty states must use an elegant icon and muted text, avoiding visual clutter."
+  },
+  "testing": {
+    "attributes": "All interactive and key informational elements MUST include a `data-testid` attribute (kebab-case, role-based)."
+  },
+  "instructions_to_main_agent": [
+    "Prioritize UI layout and exact colors specified in this guideline.",
+    "Ensure dark mode is set via Tailwind base layer (body background #0B0F14, text #F8FAFC).",
+    "Do NOT introduce external fonts other than Space Grotesk and Inter.",
+    "Implement component structures utilizing pure Tailwind over complex headless wrappers unless strictly necessary.",
+    "Focus heavily on the 'Upload & Appraise' flow as the core interactive moment—make the AI valuation step feel premium and magical but grounded."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not use generic centered text for body paragraphs; use it only for hero headlines or specific badges.",
+    "Ensure depth through layered z-indexes and subtle borders (#2A3441), rather than heavy shadows.",
+    "Use backdrop-blur-xl for sticky headers or overlapping UI elements to create glassmorphism subtly. Never leave header backgrounds transparent.",
+    "Avoid the 'AI Slop' aesthetic: no purple gradients, no robot emojis. Use lucide-react icons with stroke-width 1.5.",
+    "All components must be accessible and responsive (mobile-first)."
+  ]
+}
