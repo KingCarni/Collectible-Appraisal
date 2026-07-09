@@ -33,9 +33,9 @@ export const CATEGORIES = [
     description:
       'Reserved List, Power Nine, and modern chase cards. Live prices tracked across CardKingdom, TCGPlayer, and auction results.',
     image:
-      'https://images.unsplash.com/photo-1727445281463-af0d3a2caee3?q=80&w=1400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?q=80&w=1400&auto=format&fit=crop',
     heroImage:
-      'https://images.unsplash.com/photo-1611996575749-79a3a250f948?q=80&w=1800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?q=80&w=1800&auto=format&fit=crop',
     itemCount: 5290,
   },
   {
@@ -45,9 +45,9 @@ export const CATEGORIES = [
     description:
       'Key issues, CGC-graded slabs, and pedigree collections. From Action Comics #1 to modern variant covers.',
     image:
-      'https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?q=80&w=1400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=85&w=1400&auto=format&fit=crop',
     heroImage:
-      'https://images.unsplash.com/photo-1531259683007-016a7b628fc3?q=80&w=1800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=1800&auto=format&fit=crop',
     itemCount: 2984,
   },
   {
@@ -57,7 +57,7 @@ export const CATEGORIES = [
     description:
       'From Athenian tetradrachms to Morgan dollars. Every lot cross-referenced with PCGS, NGC, and auction house comps.',
     image:
-      'https://images.unsplash.com/photo-1621786030484-4c855eed6974?q=80&w=1400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1550565118-3a14e8d0386f?q=80&w=1400&auto=format&fit=crop',
     heroImage:
       'https://images.unsplash.com/photo-1544427920-c49ccfb85579?q=80&w=1800&auto=format&fit=crop',
     itemCount: 4611,
@@ -69,7 +69,7 @@ export const CATEGORIES = [
     description:
       'Authenticated signatures from PSA/DNA, JSA, and Beckett. Game-used, tour-worn, and screen-used artifacts.',
     image:
-      'https://images.unsplash.com/photo-1516981879613-9f5da904015f?q=80&w=1400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=1400&auto=format&fit=crop',
     heroImage:
       'https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=1800&auto=format&fit=crop',
     itemCount: 1876,

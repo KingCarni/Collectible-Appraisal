@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Sliders, X, ArrowUpDown } from 'lucide-react';
 import { CATEGORIES } from '../data/mock';
 import { listItems } from '../services/marketplace.service';

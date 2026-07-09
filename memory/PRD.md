@@ -71,3 +71,9 @@ Scope: Frontend + application shell only. All backend calls stubbed via a servic
 ## Deployment
 - Supervisor manages `frontend`, `backend`, `mongodb`.
 - Frontend uses `REACT_APP_BACKEND_URL` env var.
+
+## Session Log
+
+### 2026-01-09 — Initial MVP shipped
+- All 12 routes implemented, 18/18 QA flows pass (95% success).
+- Fixed post-QA: broken Magic tile image, off-topic Coins/Memorabilia tiles, unused imports, ScrollToTop bug (now uses `useLocation`), added React Router v7 future flags to silence warnings, added onError fallback on ItemCard imagery.

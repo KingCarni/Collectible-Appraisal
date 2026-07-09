@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AppShell } from './components/layout/AppShell';
 import LandingPage from './pages/LandingPage';
 import MarketplacePage from './pages/MarketplacePage';
@@ -17,7 +17,7 @@ import { SignInPage, SignUpPage } from './pages/AuthPages';
 import NotFoundPage from './pages/NotFoundPage';
 
 function ScrollToTop() {
-  const { pathname } = window.location;
+  const { pathname } = useLocation();
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
@@ -26,7 +26,8 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <ScrollToTop />
       <AppShell>
         <Routes>
           <Route path="/" element={<LandingPage />} />
